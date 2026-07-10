@@ -40,7 +40,7 @@ const HeroSection = () => {
     <section className="contents">
       <div className="sticky max-w-178 top-0 z-10 mb-6 aspect-video w-full overflow-hidden rounded-lg sm:top-10 sm:mb-10 sm:static">
         <video
-          src="/IT_Leader_VIDEO.mp4"
+          src="/IT_Leader_Task.mp4"
           preload="metadata"
           controls
           playsInline
