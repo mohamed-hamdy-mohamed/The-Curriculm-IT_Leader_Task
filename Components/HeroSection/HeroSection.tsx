@@ -8,8 +8,8 @@ import {
 import Link from "next/link";
 import { useState } from "react";
 
-import LeaderBoardModal from "../Modals/LeaderBoardModal";
-import AskQuesModal from "../Modals/AskQuesModal";
+import LeaderBoardModal from "@/Components/Modals/LeaderBoardModal";
+import AskQuesModal from "@/Components/Modals/AskQuesModal";
 
 interface CurriculumLinksTypes {
   href?: string;
