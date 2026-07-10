@@ -7,8 +7,8 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-import AskQuesModal from "../Modals/AskQuesModal";
-import LeaderBoardModal from "../Modals/LeaderBoardModal";
+import AskQuesModal from "@/Components/Modals/AskQuesModal";
+import LeaderBoardModal from "@/Components/Modals/LeaderBoardModal";
 
 interface CurriculumLinksTypes {
   href?: string;
