@@ -15,16 +15,16 @@ const LeaderboardModal = ({ open, setOpen }: LeaderboardModalProps) => {
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/45 p-4">
-      <div className="w-full max-w-lg rounded-3xl bg-white shadow-2xl">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/45 p-2 sm:p-4">
+      <div className="flex h-[80vh] w-full max-w-lg flex-col overflow-hidden rounded-2xl bg-white shadow-2xl sm:h-[80vh] sm:rounded-3xl">
         {/* Header */}
 
-        <div className="flex items-center justify-between border-b border-gray-100 p-6">
+        <div className="flex items-center justify-between border-b border-gray-100 p-4 sm:p-6">
           <div>
             <p className="text-sm text-gray-400">JavaScript Basics</p>
 
-            <h2 className="mt-1 flex items-center gap-2 text-2xl font-bold text-[#252A3E]">
-              <Trophy className="h-6 w-6 text-yellow-500" />
+            <h2 className="mt-1 flex items-center gap-2 text-xl font-bold text-[#252A3E] sm:text-2xl">
+              <Trophy className="h-5 w-5 text-yellow-500 sm:h-6 sm:w-6" />
               Leaderboard
             </h2>
           </div>
@@ -39,8 +39,8 @@ const LeaderboardModal = ({ open, setOpen }: LeaderboardModalProps) => {
 
         {/* Message */}
 
-        <div className="mx-6 mt-6 rounded-xl bg-[#F8FAFF] p-5 text-center">
-          <p className="text-sm leading-7 text-[#475569]">
+        <div className="mx-4 mt-4 rounded-xl bg-[#F8FAFF] p-4 text-center sm:mx-6 sm:mt-6 sm:p-5">
+          <p className="text-sm leading-6 text-[#475569] sm:leading-7">
             💪 Great job!
             <br />
             You're performing better than
@@ -52,16 +52,16 @@ const LeaderboardModal = ({ open, setOpen }: LeaderboardModalProps) => {
 
         {/* Ranking */}
 
-        <div className="mt-6 px-6 pb-6">
-          <div className="space-y-3">
+        <div className="mt-4 flex-1 overflow-y-auto px-4 pb-4 sm:mt-6 sm:px-6 sm:pb-6">
+          <div className="space-y-2.5 sm:space-y-3">
             {leaderboard.map((student, idx) => (
               <div
                 key={student.id}
-                className="flex items-center justify-between rounded-xl border border-gray-200 bg-white px-4 py-4 transition hover:border-[#48BB98]"
+                className="flex items-center justify-between rounded-xl border border-gray-200 bg-white px-3 py-3 transition hover:border-[#48BB98] sm:px-4 sm:py-4"
               >
-                <div className="flex items-center gap-4">
+                <div className="flex min-w-0 items-center gap-3 sm:gap-4">
                   <div
-                    className={`flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold text-white
+                    className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-bold text-white sm:h-10 sm:w-10
                     ${
                       idx === 0
                         ? "bg-yellow-500"
@@ -75,27 +75,29 @@ const LeaderboardModal = ({ open, setOpen }: LeaderboardModalProps) => {
                     {idx < 3 ? <Medal className="h-5 w-5" /> : idx + 1}
                   </div>
 
-                  <div>
-                    <p className="font-semibold text-[#252A3E]">
+                  <div className="min-w-0">
+                    <p className="truncate text-sm font-semibold text-[#252A3E] sm:text-base">
                       {student.name}
                     </p>
 
-                    <p className="text-sm text-gray-500">
+                    <p className="text-xs text-gray-500 sm:text-sm">
                       Score: {student.score}
                     </p>
                   </div>
                 </div>
 
-                <span className="text-lg font-bold text-[#48BB98]">
+                <span className="ml-3 shrink-0 text-base font-bold text-[#48BB98] sm:text-lg">
                   #{idx + 1}
                 </span>
               </div>
             ))}
           </div>
+        </div>
 
+        <div className="border-t border-gray-100 p-4 sm:px-6 sm:py-5">
           <button
             onClick={() => setOpen(false)}
-            className="mt-6 w-full rounded-xl bg-[#48BB98] py-3 font-semibold text-white transition hover:bg-[#3ca785]"
+            className="w-full rounded-xl bg-[#48BB98] py-3 font-semibold text-white transition hover:bg-[#3ca785]"
           >
             Close
           </button>
